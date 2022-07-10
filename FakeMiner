@@ -1,0 +1,26 @@
+import time
+import string
+import random
+
+not_found = True
+using = input("Would you like to use your cpu or gpu? ")
+
+while not_found:
+    length_of_string = random.choice(range(5, 13))
+    random_string = "".join(random.choice(string.ascii_letters) for i in range(length_of_string))
+    print(f"Token: {random_string} BTC: 0.000000")
+    ranNum = random.randint(1, 100000)
+
+    if ranNum == 2:
+        ranBTC = random.randint(1, 999)
+        print(f"Token: {random_string} BTC: 0.00{ranBTC}")
+        time.sleep(1)
+        print("Processing BTC ...")
+        time.sleep(3)
+        metamask_token = input("Please input your metamask id: ")
+        print(f"We are putting your BTC into {metamask_token} and will be done shortly")
+        time.sleep(1)
+        print("Finsished")
+        again = input("Would you like to keep mining? yes / no? ".lower())
+        if again == "no":
+            not_found = False
